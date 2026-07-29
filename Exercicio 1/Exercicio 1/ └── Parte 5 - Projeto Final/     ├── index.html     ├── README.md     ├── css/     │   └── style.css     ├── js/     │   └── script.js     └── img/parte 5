@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Projeto Frontend</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Meu Projeto Frontend</h1>
+    <nav>
+        <a href="#sobre">Sobre</a> |
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <p>Este é um projeto criado para praticar HTML, CSS e JavaScript.</p>
+
+        <img src="img/tecnologia.jpg" alt="Imagem relacionada à tecnologia" width="300">
+
+        <br><br>
+
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
+            Documentação HTML (MDN)
+        </a>
+        <br>
+        <a href="https://www.w3schools.com/html/" target="_blank">
+            Curso de HTML - W3Schools
+        </a>
+
+        <br><br>
+
+        <button onclick="mostrarMensagem()">Clique aqui</button>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: exemplo@email.com</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 - Projeto Frontend</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
