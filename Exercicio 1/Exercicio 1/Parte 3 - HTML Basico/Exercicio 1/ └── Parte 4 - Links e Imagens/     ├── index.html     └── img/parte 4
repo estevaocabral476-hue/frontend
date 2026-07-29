@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links e Imagens</title>
+</head>
+<body>
+
+    <h1>Parte 4 - Links e Imagens</h1>
+
+    <h2>Link Externo</h2>
+    <p>
+        Acesse a documentação oficial de HTML na
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
+            MDN Web Docs
+        </a>.
+    </p>
+
+    <h2>Link Interno</h2>
+    <p>
+        <a href="#contato">Ir para a seção Contato</a>
+    </p>
+
+    <hr>
+
+    <h2 id="contato">Contato</h2>
+    <p>
+        Esta é a seção de contato criada para demonstrar um link interno.
+    </p>
+
+</body>
+</html>
