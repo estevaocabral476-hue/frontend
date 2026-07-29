@@ -1,0 +1,18 @@
+# README - Parte 3: HTML Básico
+
+## Tags utilizadas
+
+* **`<!DOCTYPE html>`**: informa que o documento utiliza HTML5.
+* **`<html>`**: representa o início do documento HTML.
+* **`<head>`**: contém informações da página que não são exibidas diretamente ao usuário.
+* **`<meta>`**: define configurações como codificação de caracteres e responsividade.
+* **`<title>`**: define o título exibido na aba do navegador.
+* **`<body>`**: contém todo o conteúdo visível da página.
+* **`<h1>`**: representa o título principal da página.
+* **`<h2>`**: representa um subtítulo.
+* **`<p>`**: cria um parágrafo de texto.
+* **`<ul>`**: cria uma lista não ordenada (com marcadores).
+* **`<ol>`**: cria uma lista ordenada (numerada).
+* **`<li>`**: representa um item de uma lista, podendo ser usado em listas ordenadas ou não ordenadas.
+
+Essas tags formam a estrutura básica de uma página HTML e são essenciais para organizar o conteúdo de forma correta.
