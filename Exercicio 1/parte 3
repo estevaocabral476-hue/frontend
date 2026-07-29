@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Básico</title>
+</head>
+<body>
+
+    <h1>Exercício 1 - HTML Básico</h1>
+
+    <h2>Exemplo de Estrutura</h2>
+
+    <p>
+        Esta página foi criada para demonstrar o uso das principais tags HTML.
+    </p>
+
+    <h2>Lista não ordenada</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h2>Lista ordenada</h2>
+    <ol>
+        <li>Criar o arquivo HTML</li>
+        <li>Adicionar as tags</li>
+        <li>Salvar e visualizar no navegador</li>
+    </ol>
+
+</body>
+</html>
