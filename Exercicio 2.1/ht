@@ -1,0 +1,16 @@
+<footer>
+    <hr>
+
+    <h3>Informações</h3>
+
+    <p><strong>Autor:</strong> André</p>
+    <p><strong>Contato:</strong> andre@email.com</p>
+
+    <p>
+        <a href="https://developer.mozilla.org/pt-BR/" target="_blank">
+            Documentação MDN
+        </a>
+    </p>
+
+    <p>&copy; 2026 - Todos os direitos reservados.</p>
+</footer>
