@@ -1,1 +1,66 @@
+HTML Semântico e a Tag div
+Descrição
+Este projeto demonstra a diferença entre a tag div e as tags semânticas do HTML5, mostrando como estruturar uma página de forma mais organizada e acessível.
 
+Diferença entre div e HTML semântico
+div
+A tag div é um contêiner genérico utilizado para agrupar elementos. Ela não possui significado semântico, sendo usada quando não existe uma tag mais adequada.
+
+HTML Semântico
+O HTML semântico utiliza tags que descrevem a função de cada parte da página, como <header>, <nav>, <main>, <section>, <article> e <footer>. Isso torna o código mais organizado, facilita a manutenção, melhora a acessibilidade e contribui para o SEO.
+
+Tecnologias
+HTML5
+Desenvolvido por
+Estevão e André
+
+Exemplo prático
+Usando apenas div:
+
+<div class="header">
+  <h1>Meu Site</h1>
+</div>
+
+<div class="menu">
+  <a href="#">Início</a>
+  <a href="#">Contato</a>
+</div>
+
+<div class="conteudo">
+  <h2>Bem-vindo!</h2>
+  <p>Conteúdo da página.</p>
+</div>
+
+<div class="rodape">
+  <p>© 2026</p>
+</div>
+
+Usando HTML semântico:
+
+<header>
+  <h1>Meu Site</h1>
+</header>
+
+<nav>
+  <a href="#">Início</a>
+  <a href="#">Contato</a>
+</nav>
+
+<main>
+  <section>
+    <h2>Bem-vindo!</h2>
+    <p>Conteúdo da página.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026</p>
+</footer>
+
+git add .
+git commit -m "Adiciona README e exemplos de HTML semântico e div"
+git push
+
+Ou, de forma mais curta:
+
+git commit -m "Adiciona README e exemplos práticos"
