@@ -1,12 +1,13 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     background-color: #f4f7f9;
     color: #333333;
+    line-height: 1.6;
 }
 
 .container {
-    width: 80%;
+    width: 85%;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -25,7 +26,8 @@ nav a {
     color: white;
     text-decoration: none;
     margin-right: 20px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 nav a:hover {
@@ -34,25 +36,43 @@ nav a:hover {
 
 .secao {
     padding: 60px 0;
-    margin-bottom: 20px;
 }
 
 #inicio {
     background-color: #e7f1ff;
     text-align: center;
+    padding: 70px 20px;
     border-radius: 10px;
-    padding: 60px 20px;
+}
+
+#inicio h1,
+#inicio h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
 .botao-principal {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
     background-color: #ff9800;
     color: white;
-    text-decoration: none;
+    padding: 12px 24px;
     border-radius: 8px;
-    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
 }
 
 .botao-principal:hover {
@@ -69,8 +89,8 @@ nav a:hover {
 
 #contato {
     background-color: #e7f1ff;
-    border-radius: 10px;
     padding: 30px;
+    border-radius: 10px;
 }
 
 footer {
@@ -79,7 +99,4 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 30px;
-}    padding: 20px;
-    background-color: #222;
-    color: white;
 }
