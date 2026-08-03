@@ -1,102 +1,254 @@
-body {
-    margin: 0;
-    font-family: 'Inter', Arial, sans-serif;
-    background-color: #f4f7f9;
-    color: #333333;
-    line-height: 1.6;
+/* Configuração geral */
+
+* {
+    box-sizing: border-box;
 }
+
+
+body {
+
+    margin: 0;
+
+    font-family: 'Inter', Arial, sans-serif;
+
+    background-color: #f4f7f9;
+
+    color: #333333;
+
+    line-height: 1.6;
+
+}
+
+
 
 .container {
+
     width: 85%;
+
     max-width: 1100px;
-    margin: 0 auto;
+
+    margin: auto;
+
 }
+
+
+
+/* Cabeçalho */
 
 header {
+
     background-color: #0d6efd;
+
     color: white;
-    padding: 20px 0;
+
+    padding: 25px 0;
+
 }
+
+
+
+header h1 {
+
+    margin: 0;
+
+    font-size: 36px;
+
+}
+
+
 
 nav {
-    margin-top: 10px;
+
+    margin-top: 15px;
+
 }
+
+
 
 nav a {
+
     color: white;
+
     text-decoration: none;
+
     margin-right: 20px;
-    font-size: 16px;
+
     font-weight: 600;
+
+    transition: color 0.3s ease;
+
 }
+
+
 
 nav a:hover {
+
     color: #ffd43b;
+
 }
+
+
+
+/* Seções */
 
 .secao {
+
     padding: 60px 0;
+
 }
 
-#inicio {
+
+
+/* Hero */
+
+.hero {
+
     background-color: #e7f1ff;
+
     text-align: center;
-    padding: 70px 20px;
+
     border-radius: 10px;
+
+    margin-top: 30px;
+
 }
 
-#inicio h1,
-#inicio h2 {
-    font-size: 40px;
+
+
+.hero h2 {
+
+    font-size: 42px;
+
     font-weight: 700;
-    margin-bottom: 20px;
+
 }
+
+
+
+.hero p {
+
+    font-size: 20px;
+
+}
+
+
+
+/* Títulos */
 
 h2 {
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 15px;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
 }
 
-p {
-    font-size: 18px;
-    margin-bottom: 15px;
+
+
+h3 {
+
+    font-size: 24px;
+
 }
+
+
+
+/* Botão */
 
 .botao-principal {
+
     display: inline-block;
-    background-color: #ff9800;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
+
     margin-top: 20px;
+
+    padding: 14px 28px;
+
+    background-color: #ff9800;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+
 }
+
+
 
 .botao-principal:hover {
+
     background-color: #e68900;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+
 }
+
+
+
+/* Cards */
 
 .card {
+
     background-color: white;
-    padding: 20px;
+
+    padding: 25px;
+
     margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
 }
+
+
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+
+}
+
+
+
+/* Contato */
 
 #contato {
+
     background-color: #e7f1ff;
-    padding: 30px;
+
     border-radius: 10px;
+
 }
 
+
+
+/* Rodapé */
+
 footer {
+
     background-color: #333333;
+
     color: white;
+
     text-align: center;
-    padding: 20px;
+
+    padding: 25px;
+
     margin-top: 30px;
+
 }
