@@ -1,8 +1,55 @@
 body {
-    background-color: #f0f8ff;
+    margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-h1 {
-    color: #0066cc;
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    background-color: #0066cc;
+    color: white;
+    padding: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.secao {
+    padding: 40px 0;
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#contato {
+    background-color: #e8f4ff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
 }
