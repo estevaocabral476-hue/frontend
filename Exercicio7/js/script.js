@@ -1,82 +1,88 @@
 const produtos = [
+
     {
         nome: "Notebook Gamer",
-        descricao: "Notebook com alto desempenho para jogos e trabalho.",
-        preco: "R$ 3.500,00"
+        descricao: "Notebook potente para jogos e estudos",
+        preco: "R$ 3500,00"
     },
 
     {
         nome: "Smartphone Pro",
-        descricao: "Celular moderno com câmera de alta qualidade.",
-        preco: "R$ 2.200,00"
+        descricao: "Celular com câmera de alta qualidade",
+        preco: "R$ 2200,00"
     },
 
     {
         nome: "Headset Bluetooth",
-        descricao: "Fone sem fio com excelente qualidade sonora.",
+        descricao: "Fone sem fio com ótimo som",
         preco: "R$ 300,00"
     },
 
     {
         nome: "Teclado Mecânico",
-        descricao: "Teclado gamer com iluminação RGB.",
+        descricao: "Teclado gamer RGB",
         preco: "R$ 450,00"
     },
 
     {
         nome: "Mouse Gamer",
-        descricao: "Mouse ergonômico com alta precisão.",
+        descricao: "Mouse com alta precisão",
         preco: "R$ 150,00"
     }
+
 ];
 
 
-function carregarProdutos(){
 
-    const lista = document.getElementById("listaProdutos");
+const listaProdutos = document.getElementById("listaProdutos");
 
 
-    if(lista){
 
-        produtos.forEach(produto => {
+produtos.forEach(produto => {
 
-            lista.innerHTML += `
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+    listaProdutos.innerHTML += `
 
-                <div class="card h-100 shadow">
 
-                    <div class="card-body">
+    <div class="col-md-4 mb-4">
 
-                        <h5 class="card-title">
-                            ${produto.nome}
-                        </h5>
 
-                        <p class="card-text">
-                            ${produto.descricao}
-                        </p>
+        <div class="card shadow h-100">
 
-                        <h6>
-                            ${produto.preco}
-                        </h6>
 
-                        <button class="btn btn-primary">
-                            Comprar
-                        </button>
+            <div class="card-body">
 
-                    </div>
 
-                </div>
+                <h5 class="card-title">
+                    ${produto.nome}
+                </h5>
+
+
+                <p class="card-text">
+                    ${produto.descricao}
+                </p>
+
+
+                <p>
+                    ${produto.preco}
+                </p>
+
+
+                <button class="btn btn-primary">
+                    Comprar
+                </button>
+
 
             </div>
 
-            `;
 
-        });
-
-    }
-
-}
+        </div>
 
 
-window.onload = carregarProdutos;
+    </div>
+
+
+    `;
+
+
+});
