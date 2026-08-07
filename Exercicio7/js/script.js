@@ -1,88 +1,419 @@
-const produtos = [
+let produtos = [];
 
-    {
-        nome: "Notebook Gamer",
-        descricao: "Notebook potente para jogos e estudos",
-        preco: "R$ 3500,00"
-    },
 
-    {
-        nome: "Smartphone Pro",
-        descricao: "Celular com câmera de alta qualidade",
-        preco: "R$ 2200,00"
-    },
+// CARREGAR PRODUTOS SALVOS
+function carregarProdutos(){
 
-    {
-        nome: "Headset Bluetooth",
-        descricao: "Fone sem fio com ótimo som",
-        preco: "R$ 300,00"
-    },
+    const dados = localStorage.getItem("produtos");
 
-    {
-        nome: "Teclado Mecânico",
-        descricao: "Teclado gamer RGB",
-        preco: "R$ 450,00"
-    },
+    if(dados){
 
-    {
-        nome: "Mouse Gamer",
-        descricao: "Mouse com alta precisão",
-        preco: "R$ 150,00"
+        produtos = JSON.parse(dados);
+
     }
 
-];
+}
+
+
+// SALVAR PRODUTOS NO LOCALSTORAGE
+function salvarProdutos(){
+
+    localStorage.setItem(
+        "produtos",
+        JSON.stringify(produtos)
+    );
+
+}
 
 
 
-const listaProdutos = document.getElementById("listaProdutos");
+// RENDERIZAR PRODUTOS
+function renderizarProdutos(lista = produtos){
+
+
+const area = document.getElementById("listaProdutos");
+
+
+if(!area) return;
+
+
+area.innerHTML = "";
 
 
 
-produtos.forEach(produto => {
+lista.forEach(produto => {
 
 
-    listaProdutos.innerHTML += `
+
+area.innerHTML += `
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
 
 
-    <div class="col-md-4 mb-4">
+<div class="card-body">
 
 
-        <div class="card shadow h-100">
+<h5>
+${produto.nome}
+</h5>
 
 
-            <div class="card-body">
+<p>
+Categoria: ${produto.categoria}
+</p>
 
 
-                <h5 class="card-title">
-                    ${produto.nome}
-                </h5>
+<p>
+Preço: R$ ${produto.preco}
+</p>
 
 
-                <p class="card-text">
-                    ${produto.descricao}
-                </p>
+<p>
+Estoque: ${produto.estoque}
+</p>
 
 
-                <p>
-                    ${produto.preco}
-                </p>
+<p>
+Status: ${produto.status}
+</p>
 
 
-                <button class="btn btn-primary">
-                    Comprar
-                </button>
+
+<button 
+class="btn btn-danger"
+onclick="excluirProduto(${produto.id})">
+
+Excluir
+
+</button>
 
 
-            </div>
+
+<button 
+class="btn btn-warning"
+onclick="editarProduto(${produto.id})">
+
+Editar
+
+</button>
 
 
-        </div>
+
+</div>
 
 
-    </div>
+</div>
+
+</div>
 
 
-    `;
+`;
 
 
 });
+
+
+atualizarResumo();
+
+
+}
+
+
+
+
+// CADASTRAR PRODUTO
+
+
+const formulario = document.getElementById("formProduto");
+
+
+
+if(formulario){
+
+
+formulario.addEventListener(
+"submit",
+function(event){
+
+
+event.preventDefault();
+
+
+cadastrarProduto();
+
+
+});
+
+
+}
+
+
+
+
+function cadastrarProduto(){
+
+
+
+let produto = {
+
+
+id: Date.now(),
+
+
+nome:
+document.getElementById("nome").value,
+
+
+categoria:
+document.getElementById("categoria").value,
+
+
+preco:
+Number(document.getElementById("preco").value),
+
+
+estoque:
+Number(document.getElementById("estoque").value),
+
+
+status:
+document.getElementById("status").value
+
+
+
+};
+
+
+
+if(produto.nome === ""){
+
+alert("Digite o nome do produto");
+
+return;
+
+}
+
+
+
+produtos.push(produto);
+
+
+
+salvarProdutos();
+
+
+
+alert("Produto cadastrado com sucesso!");
+
+
+
+formulario.reset();
+
+
+
+}
+
+
+
+
+
+// EXCLUIR
+
+
+function excluirProduto(id){
+
+
+produtos = produtos.filter(
+
+produto => produto.id !== id
+
+);
+
+
+
+salvarProdutos();
+
+
+
+renderizarProdutos();
+
+
+}
+
+
+
+
+// EDITAR
+
+
+function editarProduto(id){
+
+
+let produto = produtos.find(
+
+p => p.id === id
+
+);
+
+
+
+let novoNome = prompt(
+
+"Novo nome:",
+produto.nome
+
+);
+
+
+
+if(novoNome){
+
+
+produto.nome = novoNome;
+
+
+salvarProdutos();
+
+
+renderizarProdutos();
+
+
+}
+
+
+}
+
+
+
+
+
+
+// BUSCA
+
+
+const busca = document.getElementById("busca");
+
+
+if(busca){
+
+
+busca.addEventListener(
+
+"keyup",
+
+function(){
+
+
+
+let texto = this.value.toLowerCase();
+
+
+
+let filtrados = produtos.filter(
+
+produto =>
+
+produto.nome.toLowerCase()
+.includes(texto)
+
+);
+
+
+
+renderizarProdutos(filtrados);
+
+
+
+}
+
+);
+
+
+}
+
+
+
+
+
+
+// RESUMOS
+
+
+function atualizarResumo(){
+
+
+let total =
+document.getElementById("totalProdutos");
+
+
+let ativos =
+document.getElementById("produtosAtivos");
+
+
+let valor =
+document.getElementById("valorEstoque");
+
+
+
+if(total){
+
+
+total.innerHTML =
+produtos.length;
+
+
+}
+
+
+
+if(ativos){
+
+
+ativos.innerHTML =
+
+produtos.filter(
+
+p=>p.status==="Ativo"
+
+).length;
+
+
+}
+
+
+
+if(valor){
+
+
+let soma = produtos.reduce(
+
+(total,p)=>
+
+total+(p.preco*p.estoque),
+
+0
+
+);
+
+
+valor.innerHTML =
+"R$ "+soma;
+
+
+}
+
+
+}
+
+
+
+
+// INICIAR SISTEMA
+
+
+carregarProdutos();
+
+
+renderizarProdutos();
