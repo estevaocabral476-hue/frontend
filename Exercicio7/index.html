@@ -36,38 +36,276 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="lista.html">Lista</a>
-                </li>
+                    <a class="nav-link" href="lislet produtos = [
 
-                <li class="nav-item">
-                    <a class="nav-link" href="contato.html">Contato</a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-</nav>
+{
+id:1,
+nome:"Notebook Gamer",
+categoria:"Computador",
+preco:3500,
+estoque:5,
+status:"Ativo"
+},
 
 
-<section class="container text-center mt-5">
+{
+id:2,
+nome:"Smartphone Pro",
+categoria:"Celular",
+preco:2200,
+estoque:8,
+status:"Ativo"
+},
 
-<h1>Sistema de Cadastro de Produtos</h1>
 
-<p class="lead">
-    Sistema desenvolvido para cadastrar produtos de uma loja fictícia utilizando JavaScript e LocalStorage.
+{
+id:3,
+nome:"Headset Bluetooth",
+categoria:"Acessório",
+preco:300,
+estoque:15,
+status:"Ativo"
+},
+
+
+{
+id:4,
+nome:"Teclado Mecânico",
+categoria:"Periférico",
+preco:450,
+estoque:0,
+status:"Inativo"
+},
+
+
+{
+id:5,
+nome:"Mouse Gamer",
+categoria:"Periférico",
+preco:150,
+estoque:20,
+status:"Ativo"
+}
+
+];
+
+
+
+
+
+function renderizarProdutos(lista = produtos){
+
+
+const area = document.getElementById("listaProdutos");
+
+
+area.innerHTML = "";
+
+
+
+lista.forEach(produto => {
+
+
+
+area.innerHTML += `
+
+
+<div class="col-md-4 mb-4">
+
+
+<div class="card shadow h-100">
+
+
+<div class="card-body">
+
+
+<h5>
+${produto.nome}
+</h5>
+
+
+<p>
+Categoria: ${produto.categoria}
 </p>
 
-<a href="cadastro.html" class="btn btn-primary">
-Cadastrar Produto
-</a>
+
+<p>
+Preço: R$ ${produto.preco}
+</p>
 
 
-</section>
+<p>
+Estoque: ${produto.estoque}
+</p>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<p>
+Status: ${produto.status}
+</p>
 
-</body>
-</html>
+
+
+
+<button 
+class="btn btn-danger"
+onclick="excluirProduto(${produto.id})">
+
+Excluir
+
+</button>
+
+
+
+<button 
+class="btn btn-warning"
+onclick="editarProduto(${produto.id})">
+
+Editar
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+`;
+
+
+
+});
+
+
+atualizarResumo();
+
+
+}
+
+
+
+
+
+
+function excluirProduto(id){
+
+
+produtos = produtos.filter(produto => produto.id !== id);
+
+
+renderizarProdutos();
+
+
+}
+
+
+
+
+
+
+function editarProduto(id){
+
+
+let produto = produtos.find(p => p.id === id);
+
+
+
+let novoNome = prompt(
+"Digite o novo nome:",
+produto.nome
+);
+
+
+
+if(novoNome){
+
+
+produto.nome = novoNome;
+
+
+renderizarProdutos();
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+function atualizarResumo(){
+
+
+document.getElementById("totalProdutos").innerHTML =
+produtos.length;
+
+
+
+document.getElementById("produtosAtivos").innerHTML =
+
+produtos.filter(
+p => p.status === "Ativo"
+).length;
+
+
+
+
+let valor = produtos.reduce(
+(total,p)=> total + (p.preco * p.estoque),
+0
+);
+
+
+
+document.getElementById("valorEstoque").innerHTML =
+"R$ " + valor;
+
+
+
+}
+
+
+
+
+
+
+document.getElementById("busca").addEventListener(
+"keyup",
+function(){
+
+
+let texto = this.value.toLowerCase();
+
+
+
+let filtrados = produtos.filter(produto =>
+
+produto.nome.toLowerCase().includes(texto)
+
+);
+
+
+
+renderizarProdutos(filtrados);
+
+
+
+});
+
+
+
+
+
+
+
+window.onload = renderizarProdutos;
