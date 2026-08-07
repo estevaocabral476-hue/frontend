@@ -1,0 +1,4 @@
+- Nome do projeto: Loja Responsiva - Exercício 5
+   - Objetivo do projeto
+   - Lista dos cinco produtos fictícios com valores imaginários
+   - Estrutura de arquivos
